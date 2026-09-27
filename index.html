@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Saumia & Lakshay</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f8f5ef;
+      color: #3d3833;
+      line-height: 1.6;
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        linear-gradient(
+          rgba(35, 30, 25, 0.30),
+          rgba(35, 30, 25, 0.30)
+        ),
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85")
+        center / cover;
+    }
+
+    .hero-content {
+      color: white;
+      max-width: 700px;
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(58px, 12vw, 120px);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: -3px;
+    }
+
+    .ampersand {
+      font-style: italic;
+      font-size: 0.55em;
+      display: block;
+      margin: 10px 0;
+    }
+
+    .date {
+      margin-top: 30px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 100px 24px;
+      text-align: center;
+    }
+
+    .section-label {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #9b8065;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: clamp(38px, 7vw, 64px);
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .intro {
+      max-width: 620px;
+      margin: auto;
+      font-size: 18px;
+      color: #655e57;
+    }
+
+    .events {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .event {
+      background: #eee8de;
+      padding: 35px 20px;
+    }
+
+    .event h3 {
+      font-size: 25px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .event p {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #716961;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 45px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery img:first-child {
+      grid-row: span 2;
+      height: 774px;
+    }
+
+    .venue {
+      background: #e9e1d6;
+      max-width: none;
+    }
+
+    .venue-inner {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .rsvp {
+      background: #3d3833;
+      color: white;
+      max-width: none;
+    }
+
+    .rsvp p {
+      max-width: 550px;
+      margin: 0 auto 30px;
+      color: #ddd5cb;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 30px;
+      border: 1px solid white;
+      color: white;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: white;
+      color: #3d3833;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: #2f2b27;
+      color: #bfb5aa;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 700px) {
+      .events {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery img,
+      .gallery img:first-child {
+        height: 450px;
+      }
+
+      section {
+        padding: 75px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        We're getting married
+      </div>
+
+      <h1>
+        Saumia
+        <span class="ampersand">&</span>
+        Lakshay
+      </h1>
+
+      <div class="date">
+        Save the Date · 2027
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- STORY -->
+  <section>
+
+    <div class="section-label">
+      Our Story
+    </div>
+
+    <h2>
+      Two lives,<br>
+      one beautiful story.
+    </h2>
+
+    <p class="intro">
+      A little bit of serendipity, a lot of laughter,
+      and countless memories brought us here.
+      Now we're excited to begin our next chapter
+      surrounded by the people we love.
+    </p>
+
+  </section>
+
+
+  <!-- EVENTS -->
+  <section>
+
+    <div class="section-label">
+      The Celebrations
+    </div>
+
+    <h2>
+      Join us
+    </h2>
+
+    <div class="events">
+
+      <div class="event">
+        <h3>Mehendi</h3>
+        <p>DATE · TIME</p>
+        <p>VENUE</p>
+      </div>
+
+      <div class="event">
+        <h3>Sangeet</h3>
+        <p>DATE · TIME</p>
+        <p>VENUE</p>
+      </div>
+
+      <div class="event">
+        <h3>Wedding</h3>
+        <p>DATE · TIME</p>
+        <p>VENUE</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GALLERY -->
+  <section>
+
+    <div class="section-label">
+      Memories
+    </div>
+
+    <h2>
+      Moments we've loved.
+    </h2>
+
+    <div class="gallery">
+
+      <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=85">
+
+      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85">
+
+      <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=1000&q=85">
+
+    </div>
+
+  </section>
+
+
+  <!-- VENUE -->
+  <section class="venue">
+
+    <div class="venue-inner">
+
+      <div class="section-label">
+        The Venue
+      </div>
+
+      <h2>
+        Somewhere beautiful.
+      </h2>
+
+      <p class="intro">
+        More details about the venue, travel,
+        accommodation and everything you need
+        to know will be shared here.
+      </p>
+
+      <br>
+
+      <a href="#" class="button">
+        View Location
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- RSVP -->
+  <section class="rsvp">
+
+    <div class="section-label">
+      RSVP
+    </div>
+
+    <h2>
+      Will you join us?
+    </h2>
+
+    <p>
+      We'd love to celebrate this special day with you.
+      Please let us know if you'll be there.
+    </p>
+
+    <a href="mailto:your-email@example.com" class="button">
+      RSVP With Us
+    </a>
+
+  </section>
+
+
+  <footer>
+    Saumia & Lakshay · With love
+  </footer>
+
+</body>
+</html>
