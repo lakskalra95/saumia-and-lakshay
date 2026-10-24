@@ -1,384 +1,313 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saumia & Lakshay | Wedding Invitation</title>
 
-  <title>Saumia & Lakshay</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Italianno&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: #f8f5ef;
-      color: #3d3833;
-      line-height: 1.6;
-    }
+html { scroll-behavior: smooth; }
 
-    .hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-      background:
-        linear-gradient(
-          rgba(35, 30, 25, 0.30),
-          rgba(35, 30, 25, 0.30)
-        ),
-        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85")
-        center / cover;
-    }
+body {
+  background: #f7f3eb;
+  color: #354b49;
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
 
-    .hero-content {
-      color: white;
-      max-width: 700px;
-    }
+.hero {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 35px 24px;
+  background:
+    linear-gradient(#243b3940, #243b3960),
+    url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1400&q=85")
+    center / cover;
+}
 
-    .eyebrow {
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 25px;
-    }
+.invitation {
+  width: 100%;
+  max-width: 430px;
+  text-align: center;
+  padding: 55px 20px;
+  background: #f8f4ebf2;
+  border: 1px solid #b49a6a;
+  outline: 1px solid #f8f4eb;
+  outline-offset: 6px;
+  animation: appear 1.5s ease;
+}
 
-    h1 {
-      font-size: clamp(58px, 12vw, 120px);
-      font-weight: 400;
-      line-height: 0.95;
-      letter-spacing: -3px;
-    }
+.flower { color: #b88783; font-size: 30px; }
 
-    .ampersand {
-      font-style: italic;
-      font-size: 0.55em;
-      display: block;
-      margin: 10px 0;
-    }
+.eyebrow {
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
 
-    .date {
-      margin-top: 30px;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
+h1 {
+  font-size: clamp(54px, 12vw, 78px);
+  line-height: .9;
+  font-weight: 400;
+}
 
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 100px 24px;
-      text-align: center;
-    }
+.ampersand {
+  display: block;
+  margin: 10px;
+  font-family: Italianno, cursive;
+  color: #b88783;
+  font-size: 65px;
+}
 
-    .section-label {
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #9b8065;
-      margin-bottom: 15px;
-    }
+.rule {
+  width: 50px;
+  height: 1px;
+  background: #b49a6a;
+  margin: 27px auto;
+}
 
-    h2 {
-      font-size: clamp(38px, 7vw, 64px);
-      font-weight: 400;
-      line-height: 1;
-      margin-bottom: 25px;
-    }
+.script {
+  color: #b88783;
+  font-family: Italianno, cursive;
+  font-size: 36px;
+}
 
-    .intro {
-      max-width: 620px;
-      margin: auto;
-      font-size: 18px;
-      color: #655e57;
-    }
+.date {
+  margin-top: 25px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
 
-    .events {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 50px;
-    }
+.scroll {
+  position: absolute;
+  bottom: 20px;
+  color: white;
+  font: 10px Arial, sans-serif;
+  letter-spacing: 3px;
+}
 
-    .event {
-      background: #eee8de;
-      padding: 35px 20px;
-    }
+section {
+  padding: 85px 24px;
+  text-align: center;
+}
 
-    .event h3 {
-      font-size: 25px;
-      font-weight: 400;
-      margin-bottom: 12px;
-    }
+.kicker {
+  color: #b88783;
+  font: 10px Arial, sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
 
-    .event p {
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      color: #716961;
-    }
+h2 {
+  font-size: clamp(42px, 8vw, 62px);
+  line-height: 1;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 45px;
-    }
+.copy {
+  max-width: 500px;
+  margin: auto;
+  font-size: 19px;
+  line-height: 1.7;
+  color: #6c7068;
+}
 
-    .gallery img {
-      width: 100%;
-      height: 380px;
-      object-fit: cover;
-      display: block;
-    }
+.events { background: #e8e7db; }
 
-    .gallery img:first-child {
-      grid-row: span 2;
-      height: 774px;
-    }
+.event {
+  max-width: 500px;
+  margin: auto;
+  padding: 22px 10px;
+  border-bottom: 1px solid #c5c8b9;
+}
 
-    .venue {
-      background: #e9e1d6;
-      max-width: none;
-    }
+.event h3 { font-size: 30px; font-weight: 400; }
 
-    .venue-inner {
-      max-width: 700px;
-      margin: auto;
-    }
+.event p {
+  font: 10px Arial, sans-serif;
+  letter-spacing: 1px;
+  color: #777b70;
+}
 
-    .rsvp {
-      background: #3d3833;
-      color: white;
-      max-width: none;
-    }
+.memories img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: 330px;
+  object-fit: cover;
+  margin: 25px auto;
+}
 
-    .rsvp p {
-      max-width: 550px;
-      margin: 0 auto 30px;
-      color: #ddd5cb;
-    }
+.venue {
+  background: #354b49;
+  color: #f7f3eb;
+}
 
-    .button {
-      display: inline-block;
-      padding: 15px 30px;
-      border: 1px solid white;
-      color: white;
-      text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      transition: 0.3s;
-    }
+.venue .copy { color: #d8ded5; }
 
-    .button:hover {
-      background: white;
-      color: #3d3833;
-    }
+.rsvp { background: #eaded6; }
 
-    footer {
-      text-align: center;
-      padding: 35px 20px;
-      background: #2f2b27;
-      color: #bfb5aa;
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+.music {
+  position: fixed;
+  z-index: 5;
+  top: 15px;
+  right: 15px;
+  padding: 12px 16px;
+  border: 1px solid #b49a6a;
+  border-radius: 30px;
+  background: #f7f3ebed;
+  color: #354b49;
+  cursor: pointer;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
 
-    @media (max-width: 700px) {
-      .events {
-        grid-template-columns: 1fr;
-      }
+footer {
+  padding: 35px 15px;
+  background: #283d3b;
+  color: #f7f3eb;
+  text-align: center;
+}
 
-      .gallery {
-        grid-template-columns: 1fr;
-      }
+footer p {
+  font: 10px Arial, sans-serif;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
 
-      .gallery img,
-      .gallery img:first-child {
-        height: 450px;
-      }
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-      section {
-        padding: 75px 20px;
-      }
-    }
-  </style>
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .invitation { animation: none; }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-content">
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-      <div class="eyebrow">
-        We're getting married
-      </div>
+<button class="music" id="musicButton">♫ PLAY MUSIC</button>
 
-      <h1>
-        Saumia
-        <span class="ampersand">&</span>
-        Lakshay
-      </h1>
-
-      <div class="date">
-        Save the Date · 2027
-      </div>
-
-    </div>
+<header class="hero">
+  <div class="invitation">
+    <div class="flower">✿ ❦ ✿</div>
+    <p class="eyebrow">Together with our families</p>
+    <h1>Saumia<span class="ampersand">&</span>Lakshay</h1>
+    <div class="rule"></div>
+    <p class="script">invite you to celebrate</p>
+    <p class="date">OUR WEDDING · 2027</p>
+    <p class="eyebrow">Date & details to follow</p>
+    <div class="flower">❦</div>
   </div>
+  <a href="#welcome" class="scroll">SCROLL TO DISCOVER ↓</a>
+</header>
 
-
-  <!-- STORY -->
-  <section>
-
-    <div class="section-label">
-      Our Story
-    </div>
-
-    <h2>
-      Two lives,<br>
-      one beautiful story.
-    </h2>
-
-    <p class="intro">
-      A little bit of serendipity, a lot of laughter,
-      and countless memories brought us here.
-      Now we're excited to begin our next chapter
-      surrounded by the people we love.
+<main>
+  <section id="welcome">
+    <p class="kicker">A little note from us</p>
+    <h2>Our forever<br>starts here.</h2>
+    <div class="rule"></div>
+    <p class="copy">
+      Some stories are written in the stars.
+      Ours brought us to this beautiful moment.
+      We cannot wait to celebrate the beginning
+      of our next chapter with the people we love.
     </p>
-
+    <p class="script" style="margin-top:25px">With love, Saumia & Lakshay</p>
   </section>
 
+  <section class="events" id="celebrations">
+    <p class="kicker">The wedding festivities</p>
+    <h2>Days to remember.</h2>
+    <p class="copy">A celebration filled with colour, music, laughter and love.</p>
 
-  <!-- EVENTS -->
-  <section>
-
-    <div class="section-label">
-      The Celebrations
-    </div>
-
-    <h2>
-      Join us
-    </h2>
-
-    <div class="events">
-
-      <div class="event">
+    <div style="margin-top:35px">
+      <article class="event">
         <h3>Mehendi</h3>
-        <p>DATE · TIME</p>
-        <p>VENUE</p>
-      </div>
-
-      <div class="event">
+        <p>DATE · TIME · VENUE TO BE ANNOUNCED</p>
+      </article>
+      <article class="event">
         <h3>Sangeet</h3>
-        <p>DATE · TIME</p>
-        <p>VENUE</p>
-      </div>
-
-      <div class="event">
-        <h3>Wedding</h3>
-        <p>DATE · TIME</p>
-        <p>VENUE</p>
-      </div>
-
+        <p>DATE · TIME · VENUE TO BE ANNOUNCED</p>
+      </article>
+      <article class="event">
+        <h3>The Wedding</h3>
+        <p>DATE · TIME · VENUE TO BE ANNOUNCED</p>
+      </article>
+      <article class="event">
+        <h3>Reception</h3>
+        <p>DATE · TIME · VENUE TO BE ANNOUNCED</p>
+      </article>
     </div>
-
   </section>
 
-
-  <!-- GALLERY -->
-  <section>
-
-    <div class="section-label">
-      Memories
-    </div>
-
-    <h2>
-      Moments we've loved.
-    </h2>
-
-    <div class="gallery">
-
-      <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=85">
-
-      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85">
-
-      <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=1000&q=85">
-
-    </div>
-
+  <section class="memories">
+    <p class="kicker">Our memories</p>
+    <h2>A story of us.</h2>
+    <p class="copy">Our favourite photographs and little moments will find their home here.</p>
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85" alt="Wedding celebration" loading="lazy">
   </section>
 
-
-  <!-- VENUE -->
-  <section class="venue">
-
-    <div class="venue-inner">
-
-      <div class="section-label">
-        The Venue
-      </div>
-
-      <h2>
-        Somewhere beautiful.
-      </h2>
-
-      <p class="intro">
-        More details about the venue, travel,
-        accommodation and everything you need
-        to know will be shared here.
-      </p>
-
-      <br>
-
-      <a href="#" class="button">
-        View Location
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- RSVP -->
-  <section class="rsvp">
-
-    <div class="section-label">
-      RSVP
-    </div>
-
-    <h2>
-      Will you join us?
-    </h2>
-
-    <p>
-      We'd love to celebrate this special day with you.
-      Please let us know if you'll be there.
+  <section class="venue" id="venue">
+    <p class="kicker">Find your way to us</p>
+    <h2>We'll save<br>you a place.</h2>
+    <p class="copy">
+      Wedding venue, directions, travel and accommodation
+      details will be shared here as our plans come together.
     </p>
-
-    <a href="mailto:your-email@example.com" class="button">
-      RSVP With Us
-    </a>
-
   </section>
 
+  <section class="rsvp" id="rsvp">
+    <p class="kicker">A little reply</p>
+    <h2>Will you join us?</h2>
+    <p class="copy">
+      It wouldn't be the same without you.
+      RSVP details will be shared here soon.
+    </p>
+    <div class="flower" style="margin-top:25px">✿ ❦ ✿</div>
+  </section>
+</main>
 
-  <footer>
-    Saumia & Lakshay · With love
-  </footer>
+<footer>
+  <div class="flower">❦</div>
+  <p>SAUMIA & LAKSHAY · MADE WITH LOVE</p>
+</footer>
+
+<script>
+const music = document.getElementById("music");
+const button = document.getElementById("musicButton");
+
+button.addEventListener("click", async () => {
+  if (music.paused) {
+    try {
+      await music.play();
+      button.textContent = "♫ PAUSE MUSIC";
+    } catch {
+      button.textContent = "ADD MUSIC.MP3 FIRST";
+    }
+  } else {
+    music.pause();
+    button.textContent = "♫ PLAY MUSIC";
+  }
+});
+</script>
 
 </body>
 </html>
