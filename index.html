@@ -1,313 +1,1468 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Saumia & Lakshay | Wedding Invitation</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Italianno&display=swap" rel="stylesheet">
-
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: #f7f3eb;
-  color: #354b49;
-  font-family: "Cormorant Garamond", Georgia, serif;
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><link href="file:///skills/platform/files/render/styles.css" rel="stylesheet"/><style>html, body { margin: 0; } html { background: transparent; } body { width: 100%; }</style><style>/* ../../downloads/wedding-fresh/src/style.css */
+@font-face {
+  font-family: WeddingSerif;
+  src: url('serif.woff2');
 }
-
-.hero {
-  min-height: 100svh;
-  display: grid;
-  place-items: center;
-  padding: 35px 24px;
-  background:
-    linear-gradient(#243b3940, #243b3960),
-    url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1400&q=85")
-    center / cover;
+* {
+  box-sizing: border-box;
 }
-
-.invitation {
+.opening {
+  position: relative;
+  margin: -24px -24px 24px;
+  min-height: 850px;
+  height: 100svh;
+  max-height: 1100px;
+  overflow: hidden;
+  background: #f8f3e8;
+  color: #273f38;
+  font-family:
+    WeddingSerif,
+    Georgia,
+    serif;
+  isolation: isolate;
+}
+.painted-scene {
+  position: absolute;
+  inset: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  z-index: -2;
+}
+.scene-reveal {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  animation: scene-in 2.6s ease-out both;
+}
+.grain {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 250, 240, .1),
+      transparent 55%);
+  pointer-events: none;
+}
+.mast {
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  right: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font: 10px/1.5 Arial, sans-serif;
+  letter-spacing: 2px;
+  color: #526354;
+}
+.mast > span:first-child {
+  font: 23px WeddingSerif, serif;
+  letter-spacing: 3px;
+}
+.music-wrap {
+  position: absolute;
+  right: 22px;
+  bottom: 65px;
+  text-align: center;
+  z-index: 4;
+}
+.music {
+  border: 1px solid #c9c9b6;
+  background: rgba(249, 247, 236, .94);
+  color: #3f5447;
+  border-radius: 50px;
+  min-height: 44px;
+  padding: 9px 16px;
+  font: 12px Arial, sans-serif;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  opacity: 1;
+}
+.music span {
+  font-size: 18px;
+}
+.music-note {
+  display: block;
+  font: 9px/1.5 Arial, sans-serif;
+  color: #fdfaf2;
+  text-shadow: 0 1px 5px #344e39;
+  margin-top: 7px;
+}
+.wording {
+  position: relative;
+  text-align: center;
+  padding: 124px 20px 0;
+  z-index: 2;
+  max-width: 600px;
+  margin: auto;
+}
+.invitation-line {
+  margin: 0 0 22px;
+  font: 9px/1.5 Arial, sans-serif;
+  letter-spacing: 2.6px;
+  color: #65715d;
+}
+h1 {
+  margin: 0;
+  font-weight: 400;
+  line-height: .9;
+  letter-spacing: -2.5px;
+  font-family:
+    WeddingSerif,
+    Georgia,
+    serif;
+  font-size: 76px;
+  color: #273f38;
+}
+h1 span {
+  display: block;
+}
+h1 i {
+  display: block;
+  font-weight: 400;
+  font-size: 36px;
+  color: #a28b5e;
+  margin: 12px 0 10px;
+  letter-spacing: 0;
+}
+h1 .first {
+  animation: names-in 1.3s cubic-bezier(.2, .7, .2, 1) both;
+}
+h1 .second {
+  animation: names-in 1.6s cubic-bezier(.2, .7, .2, 1) both;
+}
+.location {
+  margin: 28px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #3f5143;
+  gap: 2px;
+}
+.place {
+  font-size: 21px;
+  line-height: 1.25;
+}
+.town {
+  font-size: 27px;
+  line-height: 1.2;
+  font-style: italic;
+}
+.date-line {
+  font: 10px/1.5 Arial, sans-serif;
+  letter-spacing: 2.7px;
+  color: #54624c;
+  margin: 22px 0 0;
+}
+.bottom {
+  position: absolute;
+  bottom: 16px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fcfaed;
+  gap: 12px;
+  font: 8px/1.4 Arial, sans-serif;
+  letter-spacing: 1.5px;
+  text-shadow: 0 1px 4px #30482d;
+}
+.bottom button {
+  background: rgba(249, 247, 236, .94);
+  border: 1px solid #c9c9b6;
+  border-radius: 30px;
+  color: #40533f;
+  font: 10px Arial, sans-serif;
+  padding: 9px 12px;
+  min-height: 44px;
+  cursor: pointer;
+  letter-spacing: 0;
+}
+.bottom button:hover {
+  text-decoration: underline;
+}
+.bottom button:focus-visible {
+  outline: 2px solid #3f5447;
+  outline-offset: 3px;
+}
+.petals {
+  position: absolute;
+  left: 8%;
+  bottom: 19%;
+  width: 80%;
+  height: 22%;
+  pointer-events: none;
+  color: #efe7b9;
+  font-size: 24px;
+}
+.petals span {
+  position: absolute;
+  animation: drift 9s ease-in-out infinite;
+}
+.petals span:nth-child(2) {
+  left: 65%;
+  top: 50%;
+  animation-delay: -3s;
+}
+.petals span:nth-child(3) {
+  left: 33%;
+  top: 75%;
+  animation-delay: -5s;
+}
+@keyframes scene-in {
+  from {
+    transform: scale(1.025);
+    filter: brightness(1.08);
+  }
+  to {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+@keyframes names-in {
+  from {
+    opacity: .65;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes drift {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: .15;
+  }
+  50% {
+    transform: translate(15px, -15px);
+    opacity: .65;
+  }
+}
+@media (max-width: 350px) {
+  h1 {
+    font-size: 67px;
+  }
+  .wording {
+    padding-top: 119px;
+  }
+  .place {
+    font-size: 19px;
+  }
+  .location {
+    margin-top: 25px;
+  }
+  .invitation-line {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+  .opening {
+    min-height: 790px;
+  }
+  .mast {
+    left: 22px;
+    right: 22px;
+    font-size: 9px;
+  }
+  .bottom {
+    left: 18px;
+    right: 18px;
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+}
+@media (min-width: 768px) {
+  .opening {
+    margin: -36px -36px 24px;
+    min-height: 800px;
+  }
+  .painted-scene {
+    left: 34%;
+    width: 66%;
+    object-fit: cover;
+    object-position: center 66%;
+  }
+  .grain {
+    background:
+      linear-gradient(
+        90deg,
+        #f8f3e8 0%,
+        #f8f3e8 30%,
+        rgba(248, 243, 232, .88) 38%,
+        transparent 58%);
+  }
+  .wording {
+    margin: 0;
+    width: 53%;
+    max-width: 630px;
+    padding: 165px 24px 0 70px;
+  }
+  h1 {
+    font-size: 99px;
+  }
+  .invitation-line {
+    font-size: 10px;
+  }
+  .place {
+    font-size: 24px;
+  }
+  .town {
+    font-size: 32px;
+  }
+  .mast {
+    top: 36px;
+    left: 46px;
+    right: 46px;
+  }
+  .mast > span:last-child {
+    color: #536554;
+  }
+  .music-wrap {
+    right: 35px;
+    bottom: 85px;
+  }
+  .bottom {
+    left: 46px;
+    right: 35px;
+  }
+  .bottom > span {
+    color: #4c604b;
+    text-shadow: none;
+  }
+  .location {
+    margin-top: 35px;
+  }
+  .date-line {
+    margin-top: 25px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .opening * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .painted-scene {
+    transform: none !important;
+    filter: none !important;
+  }
+}
+.rest {
+  margin: 0 -24px;
+  color: #30473b;
+  background: #faf7ef;
+  font-family:
+    WeddingSerif,
+    Georgia,
+    serif;
+}
+.section-nav {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 15px 12px;
+  border-bottom: 1px solid #dedfcf;
+}
+.section-nav button {
+  border: 0;
+  background: none;
+  color: #4d614f;
+  padding: 12px 9px;
+  min-height: 44px;
+  font: 11px Arial, sans-serif;
+  cursor: pointer;
+}
+.section-nav button:hover {
+  text-decoration: underline;
+}
+.rest section {
+  padding: 65px 24px;
+  scroll-margin-top: 15px;
+}
+.rest .eyebrow {
+  font: 9px/1.6 Arial, sans-serif;
+  letter-spacing: 2.4px;
+  color: #788167;
+  text-align: center;
+  margin: 0 0 20px;
+}
+.rest h2 {
+  font:
+    400 47px/.98 WeddingSerif,
+    Georgia,
+    serif;
+  letter-spacing: -1px;
+  margin: 0 0 24px;
+  text-align: center;
+  color: #30473b;
+}
+.rest h2 em {
+  font-weight: 400;
+  color: #6c7c60;
+}
+.body-copy {
+  font:
+    19px/1.55 WeddingSerif,
+    Georgia,
+    serif;
+  max-width: 470px;
+  margin: 0 auto;
+  text-align: center;
+  color: #5d6d59;
+}
+.signature {
+  font:
+    italic 23px WeddingSerif,
+    Georgia,
+    serif;
+  text-align: center;
+  color: #8d7c57;
+  margin: 30px 0 0;
+}
+.little-rule {
+  height: 40px;
+  width: 1px;
+  background: #a5ad94;
+  margin: 30px auto 0;
+}
+.celebrations-section {
+  background: #edf0e5;
+}
+.day-list {
+  max-width: 670px;
+  margin: 35px auto 0;
+}
+.day-list article {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  gap: 15px;
+  align-items: center;
+  border-top: 1px solid #ccd3bd;
+  padding: 25px 0;
+}
+.day-number {
+  font-size: 50px;
+  line-height: 1;
+  color: #7e8b69;
+}
+.day-number span {
+  display: block;
+  font: 8px/1.6 Arial, sans-serif;
+  letter-spacing: .6px;
+  margin-top: 7px;
+}
+.rest h3 {
+  font:
+    400 25px/1.1 WeddingSerif,
+    Georgia,
+    serif;
+  margin: 0 0 7px;
+}
+.day-list p {
+  font:
+    16px/1.4 WeddingSerif,
+    Georgia,
+    serif;
+  color: #66735a;
+  margin: 0;
+}
+.pending {
+  max-width: 670px;
+  margin: 10px auto 0;
+  border-top: 1px solid #ccd3bd;
+  padding-top: 14px;
+}
+.pending summary {
+  font: 12px/1.6 Arial, sans-serif;
+  min-height: 44px;
+  display: list-item;
+  cursor: pointer;
+  padding: 11px 0;
+  color: #57654c;
+}
+.pending p {
+  font: 15px/1.7 Arial, sans-serif;
+  color: #58644e;
+  margin: 5px 0 0;
+}
+.attire-section {
+  display: grid;
+  gap: 35px;
+}
+.status-note {
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+  font: 9px/1.5 Arial, sans-serif;
+  letter-spacing: 1.4px;
+  color: #7c8067;
+}
+.palette {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 8px;
+  max-width: 290px;
+  margin: 0 auto;
+}
+.palette > span {
+  height: 65px;
+  width: 52px;
+  border-radius: 50% 50% 4px 4px;
+  background: #859172;
+}
+.palette > span:nth-child(2) {
+  background: #c0b58a;
+}
+.palette > span:nth-child(3) {
+  background: #b6c5c1;
+}
+.palette > span:nth-child(4) {
+  background: #c7aaa0;
+}
+.palette p {
+  width: 100%;
+  text-align: center;
+  font:
+    italic 20px/1.3 WeddingSerif,
+    Georgia,
+    serif;
+  margin: 9px 0 0;
+}
+.palette small {
+  font: 9px/1.6 Arial, sans-serif;
+  color: #7c8067;
+}
+.travel-section {
+  background: #344d40;
+  color: #f6f3e7;
+}
+.travel-section h2,
+.travel-section h3 {
+  color: #f6f3e7;
+}
+.travel-section h2 em {
+  color: #c8d1b5;
+}
+.travel-section .eyebrow {
+  color: #c5c9b5;
+}
+.venue-name {
+  text-align: center;
+  font-size: 24px;
+  margin: 0 0 32px;
+  color: #e5e4cf;
+}
+.travel-grid {
+  display: grid;
+  gap: 28px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.travel-grid article {
+  border-top: 1px solid #718168;
+  padding-top: 22px;
+}
+.travel-grid p {
+  font:
+    17px/1.55 WeddingSerif,
+    Georgia,
+    serif;
+  color: #e2e6d8;
+  margin: 0 0 12px;
+}
+.travel-grid .quiet {
+  font: 12px/1.7 Arial, sans-serif;
+  color: #becaba;
+}
+.photo-section {
+  background: #f6f0e5;
+}
+.photo-placeholder {
+  max-width: 520px;
+  aspect-ratio: 4/3;
+  margin: 30px auto 0;
+  border: 1px solid #dedac9;
+  background: #efede0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+.photo-placeholder > span {
+  font:
+    italic 48px WeddingSerif,
+    Georgia,
+    serif;
+  color: #a5ae95;
+}
+.photo-placeholder p {
+  font:
+    20px WeddingSerif,
+    Georgia,
+    serif;
+  margin: 15px 0 7px;
+}
+.photo-placeholder small {
+  font: 11px/1.6 Arial, sans-serif;
+  color: #7a836b;
+}
+.official-player {
+  max-width: 560px;
+  margin: 25px auto 0;
+  min-height: 200px;
+}
+.official-player iframe {
+  width: 100%;
+  height: 230px;
+  border: 0;
+  display: block;
+}
+.player-note {
+  font: 12px/1.7 Arial, sans-serif;
+  text-align: center;
+  color: #6f7a60;
+  max-width: 470px;
+  margin: 18px auto 0;
+}
+.external-music {
+  text-align: center;
+  font: 12px Arial, sans-serif;
+  margin-top: 16px;
+}
+.rsvp-section {
+  background: #e9e8da;
+}
+.rsvp-pending {
   max-width: 430px;
   text-align: center;
-  padding: 55px 20px;
-  background: #f8f4ebf2;
-  border: 1px solid #b49a6a;
-  outline: 1px solid #f8f4eb;
-  outline-offset: 6px;
-  animation: appear 1.5s ease;
+  margin: 30px auto 0;
+  border-top: 1px solid #c0c7ac;
+  border-bottom: 1px solid #c0c7ac;
+  padding: 26px 0;
 }
-
-.flower { color: #b88783; font-size: 30px; }
-
-.eyebrow {
-  margin: 20px 0;
-  font-family: Arial, sans-serif;
-  font-size: 9px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-h1 {
-  font-size: clamp(54px, 12vw, 78px);
-  line-height: .9;
-  font-weight: 400;
-}
-
-.ampersand {
-  display: block;
-  margin: 10px;
-  font-family: Italianno, cursive;
-  color: #b88783;
-  font-size: 65px;
-}
-
-.rule {
-  width: 50px;
-  height: 1px;
-  background: #b49a6a;
-  margin: 27px auto;
-}
-
-.script {
-  color: #b88783;
-  font-family: Italianno, cursive;
-  font-size: 36px;
-}
-
-.date {
-  margin-top: 25px;
-  font-family: Arial, sans-serif;
-  font-size: 10px;
+.rsvp-pending > span {
+  font: 9px/1.5 Arial, sans-serif;
   letter-spacing: 2px;
+  color: #65724f;
 }
-
-.scroll {
-  position: absolute;
-  bottom: 20px;
-  color: white;
-  font: 10px Arial, sans-serif;
-  letter-spacing: 3px;
+.rsvp-pending p {
+  font:
+    18px/1.5 WeddingSerif,
+    Georgia,
+    serif;
+  margin: 16px 0;
 }
-
-section {
-  padding: 85px 24px;
+.rsvp-pending small {
+  font: 11px/1.7 Arial, sans-serif;
+  color: #737b64;
+}
+.wedding-footer {
+  padding: 45px 20px;
   text-align: center;
+  background: #2f4437;
+  color: #f1f0de;
 }
-
-.kicker {
-  color: #b88783;
-  font: 10px Arial, sans-serif;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
+.wedding-footer p {
+  font:
+    35px WeddingSerif,
+    Georgia,
+    serif;
+  margin: 0 0 15px;
 }
-
-h2 {
-  font-size: clamp(42px, 8vw, 62px);
-  line-height: 1;
-  font-weight: 400;
-  margin-bottom: 25px;
+.wedding-footer i {
+  color: #c9ba8c;
 }
-
-.copy {
-  max-width: 500px;
-  margin: auto;
-  font-size: 19px;
-  line-height: 1.7;
-  color: #6c7068;
+.wedding-footer > span {
+  font: 8px Arial, sans-serif;
+  letter-spacing: 1.7px;
 }
-
-.events { background: #e8e7db; }
-
-.event {
-  max-width: 500px;
-  margin: auto;
-  padding: 22px 10px;
-  border-bottom: 1px solid #c5c8b9;
+.bottom .discover {
+  background: none;
+  border: 0;
+  color: #fffdee;
+  text-shadow: 0 1px 5px #344e39;
+  padding-left: 0;
+  text-align: left;
 }
-
-.event h3 { font-size: 30px; font-weight: 400; }
-
-.event p {
-  font: 10px Arial, sans-serif;
-  letter-spacing: 1px;
-  color: #777b70;
+.opening {
+  margin-bottom: 0;
 }
-
-.memories img {
-  display: block;
-  width: 100%;
-  max-width: 520px;
-  height: 330px;
-  object-fit: cover;
-  margin: 25px auto;
+.rest button:focus-visible,
+.rest summary:focus-visible {
+  outline: 2px solid #8f9e76;
+  outline-offset: 3px;
 }
-
-.venue {
-  background: #354b49;
-  color: #f7f3eb;
-}
-
-.venue .copy { color: #d8ded5; }
-
-.rsvp { background: #eaded6; }
-
-.music {
-  position: fixed;
-  z-index: 5;
-  top: 15px;
-  right: 15px;
-  padding: 12px 16px;
-  border: 1px solid #b49a6a;
-  border-radius: 30px;
-  background: #f7f3ebed;
-  color: #354b49;
-  cursor: pointer;
-  font-size: 10px;
-  letter-spacing: 1px;
-}
-
-footer {
-  padding: 35px 15px;
-  background: #283d3b;
-  color: #f7f3eb;
-  text-align: center;
-}
-
-footer p {
-  font: 10px Arial, sans-serif;
-  letter-spacing: 2px;
-  margin-top: 10px;
-}
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .invitation { animation: none; }
-}
-</style>
-</head>
-
-<body>
-
-<audio id="music" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<button class="music" id="musicButton">♫ PLAY MUSIC</button>
-
-<header class="hero">
-  <div class="invitation">
-    <div class="flower">✿ ❦ ✿</div>
-    <p class="eyebrow">Together with our families</p>
-    <h1>Saumia<span class="ampersand">&</span>Lakshay</h1>
-    <div class="rule"></div>
-    <p class="script">invite you to celebrate</p>
-    <p class="date">OUR WEDDING · 2027</p>
-    <p class="eyebrow">Date & details to follow</p>
-    <div class="flower">❦</div>
-  </div>
-  <a href="#welcome" class="scroll">SCROLL TO DISCOVER ↓</a>
-</header>
-
-<main>
-  <section id="welcome">
-    <p class="kicker">A little note from us</p>
-    <h2>Our forever<br>starts here.</h2>
-    <div class="rule"></div>
-    <p class="copy">
-      Some stories are written in the stars.
-      Ours brought us to this beautiful moment.
-      We cannot wait to celebrate the beginning
-      of our next chapter with the people we love.
-    </p>
-    <p class="script" style="margin-top:25px">With love, Saumia & Lakshay</p>
-  </section>
-
-  <section class="events" id="celebrations">
-    <p class="kicker">The wedding festivities</p>
-    <h2>Days to remember.</h2>
-    <p class="copy">A celebration filled with colour, music, laughter and love.</p>
-
-    <div style="margin-top:35px">
-      <article class="event">
-        <h3>Mehendi</h3>
-        <p>DATE · TIME · VENUE TO BE ANNOUNCED</p>
-      </article>
-      <article class="event">
-        <h3>Sangeet</h3>
-        <p>DATE · TIME · VENUE TO BE ANNOUNCED</p>
-      </article>
-      <article class="event">
-        <h3>The Wedding</h3>
-        <p>DATE · TIME · VENUE TO BE ANNOUNCED</p>
-      </article>
-      <article class="event">
-        <h3>Reception</h3>
-        <p>DATE · TIME · VENUE TO BE ANNOUNCED</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="memories">
-    <p class="kicker">Our memories</p>
-    <h2>A story of us.</h2>
-    <p class="copy">Our favourite photographs and little moments will find their home here.</p>
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85" alt="Wedding celebration" loading="lazy">
-  </section>
-
-  <section class="venue" id="venue">
-    <p class="kicker">Find your way to us</p>
-    <h2>We'll save<br>you a place.</h2>
-    <p class="copy">
-      Wedding venue, directions, travel and accommodation
-      details will be shared here as our plans come together.
-    </p>
-  </section>
-
-  <section class="rsvp" id="rsvp">
-    <p class="kicker">A little reply</p>
-    <h2>Will you join us?</h2>
-    <p class="copy">
-      It wouldn't be the same without you.
-      RSVP details will be shared here soon.
-    </p>
-    <div class="flower" style="margin-top:25px">✿ ❦ ✿</div>
-  </section>
-</main>
-
-<footer>
-  <div class="flower">❦</div>
-  <p>SAUMIA & LAKSHAY · MADE WITH LOVE</p>
-</footer>
-
-<script>
-const music = document.getElementById("music");
-const button = document.getElementById("musicButton");
-
-button.addEventListener("click", async () => {
-  if (music.paused) {
-    try {
-      await music.play();
-      button.textContent = "♫ PAUSE MUSIC";
-    } catch {
-      button.textContent = "ADD MUSIC.MP3 FIRST";
-    }
-  } else {
-    music.pause();
-    button.textContent = "♫ PLAY MUSIC";
+@media (min-width: 768px) {
+  .rest {
+    margin: 0 -36px;
   }
-});
-</script>
+  .rest section {
+    padding: 85px 65px;
+  }
+  .rest h2 {
+    font-size: 63px;
+  }
+  .section-nav {
+    gap: 22px;
+  }
+  .attire-section {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+  }
+  .attire-section h2,
+  .attire-section .eyebrow,
+  .attire-section .body-copy,
+  .attire-section .status-note {
+    text-align: left;
+  }
+  .attire-section .body-copy {
+    margin-left: 0;
+  }
+  .travel-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .official-player iframe {
+    height: 315px;
+  }
+  .bottom .discover {
+    color: #526346;
+    text-shadow: none;
+  }
+}
+@media (max-width: 350px) {
+  .rest h2 {
+    font-size: 42px;
+  }
+  .day-list article {
+    grid-template-columns: 85px 1fr;
+    gap: 12px;
+  }
+  .rest h3 {
+    font-size: 23px;
+  }
+  .rest section {
+    padding: 55px 22px;
+  }
+  .section-nav button {
+    padding: 12px 7px;
+    font-size: 10px;
+  }
+}
+.audio-pending {
+  max-width: 470px;
+  margin: 27px auto 0;
+  padding: 25px;
+  text-align: center;
+  border: 1px solid #d8ddc9;
+  background: #edf0e5;
+}
+.audio-pending > span {
+  font-size: 30px;
+  color: #879574;
+}
+.audio-pending p {
+  font:
+    22px/1.2 WeddingSerif,
+    Georgia,
+    serif;
+  margin: 12px 0;
+}
+.audio-pending small {
+  font: 12px/1.7 Arial, sans-serif;
+  color: #6d785f;
+}
+.wedding-footer {
+  display: block !important;
+}
+.opening {
+  height: 740px;
+  min-height: 0;
+  max-height: none;
+}
+.wording {
+  padding-top: 90px;
+}
+h1 {
+  font-size: 66px;
+}
+.invitation-line {
+  margin-bottom: 18px;
+}
+.location {
+  margin-top: 20px;
+}
+.place {
+  font-size: 20px;
+}
+.town {
+  font-size: 25px;
+}
+.date-line {
+  margin-top: 16px;
+}
+.hero-rsvp {
+  margin: 19px 0 0;
+  border: 1px solid #9ba686;
+  border-radius: 30px;
+  padding: 11px 20px;
+  min-height: 44px;
+  background: #f9f7ed;
+  color: #4d6249;
+  font: 11px Arial, sans-serif;
+  letter-spacing: 1px;
+  opacity: 1;
+}
+.scene-reveal {
+  animation: scene-in 2s ease-out both;
+}
+.painted-scene {
+  animation: landscape-breathe 14s ease-in-out infinite !important;
+}
+.petals {
+  font-size: 50px;
+  bottom: 16%;
+  height: 30%;
+  color: #fff4ba;
+  text-shadow: 0 0 12px #fff8d3;
+}
+.petals span {
+  animation: drift 6s ease-in-out infinite;
+}
+.petals span:nth-child(2) {
+  animation-delay: -2s;
+}
+.petals span:nth-child(3) {
+  animation-delay: -4s;
+}
+h1 .first {
+  animation: names-in 1.1s ease-out both;
+}
+h1 .second {
+  animation: names-in 1.5s ease-out both;
+}
+.rest section {
+  animation: section-rise .8s ease-out both;
+}
+.bottom {
+  bottom: 16px;
+}
+.bottom .discover {
+  max-width: 55%;
+  font-size: 10px;
+}
+.bottom button {
+  font-size: 10px;
+}
+@keyframes landscape-breathe {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.045);
+    filter: brightness(1.035);
+  }
+}
+@keyframes section-rise {
+  from {
+    opacity: .6;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes names-in {
+  from {
+    opacity: .2;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes drift {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: .35;
+  }
+  50% {
+    transform: translate(30px, -35px);
+    opacity: .95;
+  }
+}
+@media (max-width: 350px) {
+  .opening {
+    height: 700px;
+    min-height: 0;
+  }
+  .wording {
+    padding-top: 90px;
+  }
+  h1 {
+    font-size: 60px;
+  }
+  .location {
+    margin-top: 17px;
+  }
+  .place {
+    font-size: 18px;
+  }
+  .town {
+    font-size: 23px;
+  }
+  .hero-rsvp {
+    margin-top: 16px;
+  }
+}
+@media (min-width: 768px) {
+  .opening {
+    height: 730px;
+    min-height: 0;
+  }
+  .wording {
+    padding-top: 105px;
+    padding-left: 70px;
+  }
+  h1 {
+    font-size: 83px;
+  }
+  .location {
+    margin-top: 25px;
+  }
+  .place {
+    font-size: 23px;
+  }
+  .town {
+    font-size: 29px;
+  }
+  .hero-rsvp {
+    margin-top: 22px;
+  }
+  .painted-scene {
+    object-position: center 70%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .opening *,
+  .rest section {
+    animation: none !important;
+    transition: none !important;
+  }
+  .painted-scene {
+    animation: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+.lake-motion {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  left: 0;
+  right: 0;
+  top: 64%;
+  height: 33%;
+  clip-path: polygon(47% 0, 62% 0, 73% 15%, 94% 47%, 100% 69%, 72% 100%, 21% 96%, 15% 75%, 30% 51%, 40% 24%);
+  overflow: hidden;
+  opacity: .68;
+  mix-blend-mode: soft-light;
+}
+.lake-shimmer {
+  position: absolute;
+  inset: -20%;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 9px,
+      rgba(255, 255, 217, .65) 10px,
+      transparent 12px 24px,
+      rgba(255, 255, 241, .45) 25px,
+      transparent 27px 38px);
+  transform: skewY(-2deg);
+  animation: water-flow 5s ease-in-out infinite alternate;
+}
+.ripple {
+  position: absolute;
+  display: block;
+  border: 1px solid rgba(255, 255, 224, .9);
+  border-radius: 50%;
+  width: 140px;
+  height: 16px;
+  left: 39%;
+  top: 29%;
+  animation: lake-ripple 4.5s ease-out infinite;
+  box-shadow: 0 2px 0 rgba(83, 111, 91, .2);
+}
+.ripple-two {
+  left: 48%;
+  top: 65%;
+  width: 190px;
+  height: 20px;
+  animation-delay: -1.8s;
+}
+.ripple-three {
+  left: 25%;
+  top: 46%;
+  width: 110px;
+  height: 12px;
+  animation-delay: -3.2s;
+}
+@keyframes water-flow {
+  from {
+    transform: translateX(-11px) translateY(-5px) skewY(-2deg);
+    opacity: .45;
+  }
+  to {
+    transform: translateX(13px) translateY(6px) skewY(1deg);
+    opacity: .95;
+  }
+}
+@keyframes lake-ripple {
+  0% {
+    transform: scale(.4);
+    opacity: 0;
+  }
+  20% {
+    opacity: .8;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+.rest section {
+  animation: none;
+}
+.rest .scroll-reveal {
+  opacity: .25;
+  transform: translateY(24px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.rest .scroll-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.little-rule {
+  animation: rule-grow 3s ease-in-out infinite alternate;
+  transform-origin: top;
+}
+.day-number {
+  transition: color .3s, transform .3s;
+}
+.day-list article:hover .day-number {
+  color: #a49569;
+  transform: translateY(-3px);
+}
+@keyframes rule-grow {
+  from {
+    transform: scaleY(.55);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@media (min-width: 768px) {
+  .lake-motion {
+    left: 34%;
+    top: 56%;
+    height: 42%;
+    clip-path: polygon(47% 0, 62% 0, 73% 15%, 94% 47%, 100% 69%, 72% 100%, 21% 96%, 15% 75%, 30% 51%, 40% 24%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lake-motion {
+    display: none;
+  }
+  .little-rule {
+    animation: none !important;
+  }
+  .rest .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .day-number {
+    transition: none;
+  }
+  .day-list article:hover .day-number {
+    transform: none;
+  }
+}
+.lake-motion {
+  mix-blend-mode: normal;
+  opacity: .52;
+}
+.lake-shimmer {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 12px,
+      rgba(255, 255, 228, .7) 13px,
+      transparent 15px 30px,
+      rgba(232, 243, 226, .5) 31px,
+      transparent 33px 49px);
+  animation-duration: 3.6s;
+}
+.ripple {
+  border-color: rgba(249, 255, 228, .95);
+  border-width: 1.5px;
+  box-shadow: 0 2px 1px rgba(56, 88, 70, .28);
+  animation-duration: 3.2s;
+}
+.ripple-two {
+  animation-delay: -1.1s;
+}
+.ripple-three {
+  animation-delay: -2.2s;
+}
+.motion-toggle {
+  position: absolute;
+  right: 22px;
+  top: 65px;
+  z-index: 5;
+  text-align: right;
+}
+.motion-toggle button {
+  border: 0;
+  background: rgba(248, 247, 237, .88);
+  border-radius: 30px;
+  padding: 11px 13px;
+  min-height: 44px;
+  font: 10px Arial, sans-serif;
+  color: #637052;
+  cursor: pointer;
+}
+.reduce-label {
+  display: none;
+  font: 9px/1.5 Arial, sans-serif;
+  color: #647250;
+}
+.motion-paused * {
+  animation-play-state: paused !important;
+}
+.motion-toggle button:hover {
+  text-decoration: underline;
+}
+@media (min-width: 768px) {
+  .motion-toggle {
+    right: 36px;
+    top: 70px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-toggle button {
+    display: none;
+  }
+  .reduce-label {
+    display: block;
+  }
+  .rest .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+.motion-toggle {
+  top: auto;
+  bottom: 72px;
+}
+@media (min-width: 768px) {
+  .motion-toggle {
+    top: auto;
+    bottom: 76px;
+  }
+}
+.palette > span {
+  animation: palette-bob 5s ease-in-out infinite;
+}
+.palette > span:nth-child(2) {
+  animation-delay: -1s;
+}
+.palette > span:nth-child(3) {
+  animation-delay: -2s;
+}
+.palette > span:nth-child(4) {
+  animation-delay: -3s;
+}
+.rsvp-pending {
+  animation: reply-glow 4s ease-in-out infinite;
+}
+@keyframes palette-bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+@keyframes reply-glow {
+  0%, 100% {
+    border-color: #c0c7ac;
+  }
+  50% {
+    border-color: #82946c;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .palette > span,
+  .rsvp-pending {
+    animation: none !important;
+  }
+}
+.rest .scroll-reveal {
+  opacity: 1;
+  transform: none;
+}
+.water-texture {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  clip-path: polygon(47% 65%, 60% 65%, 68% 69%, 87% 80%, 81% 90%, 36% 96%, 27% 86%, 37% 73%);
+  opacity: .85;
+}
+.water-texture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  animation: water-sway 3s ease-in-out infinite alternate;
+}
+@keyframes water-sway {
+  from {
+    transform: translate(-3px, -1px) scaleX(1.025);
+  }
+  to {
+    transform: translate(3px, 1px) scaleX(.995);
+  }
+}
+@media (min-width: 768px) {
+  .water-texture {
+    clip-path: polygon(65% 57%, 75% 57%, 85% 70%, 98% 87%, 87% 99%, 59% 92%, 60% 75%);
+  }
+  .water-texture img {
+    position: absolute;
+    left: 34%;
+    width: 66%;
+    object-position: center 70%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .water-texture {
+    display: none;
+  }
+}
+.date-line {
+  display: inline-block;
+  padding: 10px 17px;
+  margin: 17px auto 0;
+  background: #f9f5e9;
+  border: 1px solid #c3c7af;
+  border-radius: 3px;
+  color: #304737;
+  font: 600 12px/1.5 Arial, sans-serif;
+  letter-spacing: 2px;
+  box-shadow: 0 2px 10px #31452f12;
+}
+.hero-rsvp {
+  display: block;
+  margin: 15px auto 0;
+}
+.music-wrap {
+  right: 22px;
+  bottom: 72px;
+}
+.music {
+  font-size: 10px;
+  padding: 10px 13px;
+}
+.rest h2 {
+  position: relative;
+}
+.rest h2:after {
+  content: "";
+  display: block;
+  width: 65px;
+  height: 2px;
+  background: #9b936b;
+  margin: 18px auto 0;
+  transform-origin: left;
+}
+.scroll-arrived h3 {
+  animation: card-copy-in .8s ease-out both;
+}
+.day-list article.scroll-arrived .day-number {
+  animation: date-arrive 1.1s cubic-bezier(.2, .7, .2, 1) both;
+}
+.rest h2.scroll-arrived:after {
+  animation: line-draw 1.1s ease-out both;
+}
+.travel-grid article.scroll-arrived {
+  animation: travel-arrive .9s ease-out both;
+}
+.palette.scroll-arrived > span {
+  animation: colour-arrive .9s ease-out both;
+}
+.palette.scroll-arrived > span:nth-child(2) {
+  animation-delay: .12s;
+}
+.palette.scroll-arrived > span:nth-child(3) {
+  animation-delay: .24s;
+}
+.palette.scroll-arrived > span:nth-child(4) {
+  animation-delay: .36s;
+}
+.rsvp-pending.scroll-arrived {
+  animation: reply-arrive 1s ease-out both;
+}
+@keyframes date-arrive {
+  from {
+    transform: translateX(-28px) rotate(-6deg);
+    color: #bda76c;
+  }
+  to {
+    transform: none;
+    color: #7e8b69;
+  }
+}
+@keyframes card-copy-in {
+  from {
+    transform: translateX(20px);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes line-draw {
+  from {
+    transform: scaleX(.05);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes travel-arrive {
+  from {
+    transform: translateY(24px);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes colour-arrive {
+  from {
+    transform: translateY(26px) rotate(8deg);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes reply-arrive {
+  from {
+    transform: scale(.95);
+    border-color: #8b976a;
+  }
+  to {
+    transform: scale(1);
+    border-color: #c0c7ac;
+  }
+}
+@media (min-width: 768px) {
+  .music-wrap {
+    right: 36px;
+    bottom: 76px;
+  }
+  .attire-section h2:after {
+    margin-left: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rest * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
 
-</body>
-</html>
+@font-face{font-family:WeddingSerif;src:url('serif.woff2')}
+*{box-sizing:border-box}
+.opening{position:relative;margin:-24px -24px 24px;min-height:850px;height:100svh;max-height:1100px;overflow:hidden;background:#f8f3e8;color:#273f38;font-family:WeddingSerif,Georgia,serif;isolation:isolate}
+.painted-scene{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom;z-index:-2;}
+.scene-reveal{position:absolute;inset:0;z-index:-2;animation:scene-in 2.6s ease-out both}.grain{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(255,250,240,.1),transparent 55%);pointer-events:none}
+.mast{position:absolute;top:26px;left:26px;right:26px;display:flex;align-items:center;justify-content:space-between;font:10px/1.5 Arial,sans-serif;letter-spacing:2px;color:#526354}
+.mast>span:first-child{font:23px WeddingSerif,serif;letter-spacing:3px}
+.music-wrap{position:absolute;right:22px;bottom:65px;text-align:center;z-index:4}
+.music{border:1px solid #c9c9b6;background:rgba(249,247,236,.94);color:#3f5447;border-radius:50px;min-height:44px;padding:9px 16px;font:12px Arial,sans-serif;display:flex;gap:9px;align-items:center;opacity:1}
+.music span{font-size:18px}.music-note{display:block;font:9px/1.5 Arial,sans-serif;color:#fdfaf2;text-shadow:0 1px 5px #344e39;margin-top:7px}
+.wording{position:relative;text-align:center;padding:124px 20px 0;z-index:2;max-width:600px;margin:auto}
+.invitation-line{margin:0 0 22px;font:9px/1.5 Arial,sans-serif;letter-spacing:2.6px;color:#65715d}
+h1{margin:0;font-weight:400;line-height:.9;letter-spacing:-2.5px;font-family:WeddingSerif,Georgia,serif;font-size:76px;color:#273f38}
+h1 span{display:block}h1 i{display:block;font-weight:400;font-size:36px;color:#a28b5e;margin:12px 0 10px;letter-spacing:0}
+h1 .first{animation:names-in 1.3s cubic-bezier(.2,.7,.2,1) both}h1 .second{animation:names-in 1.6s cubic-bezier(.2,.7,.2,1) both}
+.location{margin:28px auto 0;display:flex;flex-direction:column;align-items:center;color:#3f5143;gap:2px}
+.place{font-size:21px;line-height:1.25}.town{font-size:27px;line-height:1.2;font-style:italic}
+.date-line{font:10px/1.5 Arial,sans-serif;letter-spacing:2.7px;color:#54624c;margin:22px 0 0}
+.bottom{position:absolute;bottom:16px;left:24px;right:24px;display:flex;align-items:center;justify-content:space-between;color:#fcfaed;gap:12px;font:8px/1.4 Arial,sans-serif;letter-spacing:1.5px;text-shadow:0 1px 4px #30482d}
+.bottom button{background:rgba(249,247,236,.94);border:1px solid #c9c9b6;border-radius:30px;color:#40533f;font:10px Arial,sans-serif;padding:9px 12px;min-height:44px;cursor:pointer;letter-spacing:0}
+.bottom button:hover{text-decoration:underline}.bottom button:focus-visible{outline:2px solid #3f5447;outline-offset:3px}
+.petals{position:absolute;left:8%;bottom:19%;width:80%;height:22%;pointer-events:none;color:#efe7b9;font-size:24px}
+.petals span{position:absolute;animation:drift 9s ease-in-out infinite}.petals span:nth-child(2){left:65%;top:50%;animation-delay:-3s}.petals span:nth-child(3){left:33%;top:75%;animation-delay:-5s}
+@keyframes scene-in{from{transform:scale(1.025);filter:brightness(1.08)}to{transform:scale(1);filter:brightness(1)}}
+@keyframes names-in{from{opacity:.65;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes drift{0%,100%{transform:translate(0,0);opacity:.15}50%{transform:translate(15px,-15px);opacity:.65}}
+@media(max-width:350px){h1{font-size:67px}.wording{padding-top:119px}.place{font-size:19px}.location{margin-top:25px}.invitation-line{font-size:8px;letter-spacing:2px}.opening{min-height:790px}.mast{left:22px;right:22px;font-size:9px}.bottom{left:18px;right:18px;font-size:7px;letter-spacing:1px}}
+@media(min-width:768px){.opening{margin:-36px -36px 24px;min-height:800px}.painted-scene{left:34%;width:66%;object-fit:cover;object-position:center 66%}.grain{background:linear-gradient(90deg,#f8f3e8 0%,#f8f3e8 30%,rgba(248,243,232,.88) 38%,transparent 58%)}.wording{margin:0;width:53%;max-width:630px;padding:165px 24px 0 70px}h1{font-size:99px}.invitation-line{font-size:10px}.place{font-size:24px}.town{font-size:32px}.mast{top:36px;left:46px;right:46px}.mast>span:last-child{color:#536554}.music-wrap{right:35px;bottom:85px}.bottom{left:46px;right:35px}.bottom>span{color:#4c604b;text-shadow:none}.location{margin-top:35px}.date-line{margin-top:25px}}
+@media(prefers-reduced-motion:reduce){.opening *{animation:none!important;transition:none!important}.painted-scene{transform:none!important;filter:none!important}}
+.rest{margin:0 -24px;color:#30473b;background:#faf7ef;font-family:WeddingSerif,Georgia,serif}.section-nav{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;padding:15px 12px;border-bottom:1px solid #dedfcf}.section-nav button{border:0;background:none;color:#4d614f;padding:12px 9px;min-height:44px;font:11px Arial,sans-serif;cursor:pointer}.section-nav button:hover{text-decoration:underline}.rest section{padding:65px 24px;scroll-margin-top:15px}.rest .eyebrow{font:9px/1.6 Arial,sans-serif;letter-spacing:2.4px;color:#788167;text-align:center;margin:0 0 20px}.rest h2{font:400 47px/.98 WeddingSerif,Georgia,serif;letter-spacing:-1px;margin:0 0 24px;text-align:center;color:#30473b}.rest h2 em{font-weight:400;color:#6c7c60}.body-copy{font:19px/1.55 WeddingSerif,Georgia,serif;max-width:470px;margin:0 auto;text-align:center;color:#5d6d59}.signature{font:italic 23px WeddingSerif,Georgia,serif;text-align:center;color:#8d7c57;margin:30px 0 0}.little-rule{height:40px;width:1px;background:#a5ad94;margin:30px auto 0}.celebrations-section{background:#edf0e5}.day-list{max-width:670px;margin:35px auto 0}.day-list article{display:grid;grid-template-columns:104px 1fr;gap:15px;align-items:center;border-top:1px solid #ccd3bd;padding:25px 0}.day-number{font-size:50px;line-height:1;color:#7e8b69}.day-number span{display:block;font:8px/1.6 Arial,sans-serif;letter-spacing:.6px;margin-top:7px}.rest h3{font:400 25px/1.1 WeddingSerif,Georgia,serif;margin:0 0 7px}.day-list p{font:16px/1.4 WeddingSerif,Georgia,serif;color:#66735a;margin:0}.pending{max-width:670px;margin:10px auto 0;border-top:1px solid #ccd3bd;padding-top:14px}.pending summary{font:12px/1.6 Arial,sans-serif;min-height:44px;display:list-item;cursor:pointer;padding:11px 0;color:#57654c}.pending p{font:15px/1.7 Arial,sans-serif;color:#58644e;margin:5px 0 0}.attire-section{display:grid;gap:35px}.status-note{display:block;text-align:center;margin-top:25px;font:9px/1.5 Arial,sans-serif;letter-spacing:1.4px;color:#7c8067}.palette{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;padding-top:8px;max-width:290px;margin:0 auto}.palette>span{height:65px;width:52px;border-radius:50% 50% 4px 4px;background:#859172}.palette>span:nth-child(2){background:#c0b58a}.palette>span:nth-child(3){background:#b6c5c1}.palette>span:nth-child(4){background:#c7aaa0}.palette p{width:100%;text-align:center;font:italic 20px/1.3 WeddingSerif,Georgia,serif;margin:9px 0 0}.palette small{font:9px/1.6 Arial,sans-serif;color:#7c8067}.travel-section{background:#344d40;color:#f6f3e7}.travel-section h2,.travel-section h3{color:#f6f3e7}.travel-section h2 em{color:#c8d1b5}.travel-section .eyebrow{color:#c5c9b5}.venue-name{text-align:center;font-size:24px;margin:0 0 32px;color:#e5e4cf}.travel-grid{display:grid;gap:28px;max-width:700px;margin:0 auto}.travel-grid article{border-top:1px solid #718168;padding-top:22px}.travel-grid p{font:17px/1.55 WeddingSerif,Georgia,serif;color:#e2e6d8;margin:0 0 12px}.travel-grid .quiet{font:12px/1.7 Arial,sans-serif;color:#becaba}.photo-section{background:#f6f0e5}.photo-placeholder{max-width:520px;aspect-ratio:4/3;margin:30px auto 0;border:1px solid #dedac9;background:#efede0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}.photo-placeholder>span{font:italic 48px WeddingSerif,Georgia,serif;color:#a5ae95}.photo-placeholder p{font:20px WeddingSerif,Georgia,serif;margin:15px 0 7px}.photo-placeholder small{font:11px/1.6 Arial,sans-serif;color:#7a836b}.official-player{max-width:560px;margin:25px auto 0;min-height:200px}.official-player iframe{width:100%;height:230px;border:0;display:block}.player-note{font:12px/1.7 Arial,sans-serif;text-align:center;color:#6f7a60;max-width:470px;margin:18px auto 0}.external-music{text-align:center;font:12px Arial,sans-serif;margin-top:16px}.rsvp-section{background:#e9e8da}.rsvp-pending{max-width:430px;text-align:center;margin:30px auto 0;border-top:1px solid #c0c7ac;border-bottom:1px solid #c0c7ac;padding:26px 0}.rsvp-pending>span{font:9px/1.5 Arial,sans-serif;letter-spacing:2px;color:#65724f}.rsvp-pending p{font:18px/1.5 WeddingSerif,Georgia,serif;margin:16px 0}.rsvp-pending small{font:11px/1.7 Arial,sans-serif;color:#737b64}.wedding-footer{padding:45px 20px;text-align:center;background:#2f4437;color:#f1f0de}.wedding-footer p{font:35px WeddingSerif,Georgia,serif;margin:0 0 15px}.wedding-footer i{color:#c9ba8c}.wedding-footer>span{font:8px Arial,sans-serif;letter-spacing:1.7px}.bottom .discover{background:none;border:0;color:#fffdee;text-shadow:0 1px 5px #344e39;padding-left:0;text-align:left}.opening{margin-bottom:0}.rest button:focus-visible,.rest summary:focus-visible{outline:2px solid #8f9e76;outline-offset:3px}
+@media(min-width:768px){.rest{margin:0 -36px}.rest section{padding:85px 65px}.rest h2{font-size:63px}.section-nav{gap:22px}.attire-section{grid-template-columns:1.2fr 1fr;align-items:center}.attire-section h2,.attire-section .eyebrow,.attire-section .body-copy,.attire-section .status-note{text-align:left}.attire-section .body-copy{margin-left:0}.travel-grid{grid-template-columns:1fr 1fr;gap:40px}.official-player iframe{height:315px}.bottom .discover{color:#526346;text-shadow:none}}
+@media(max-width:350px){.rest h2{font-size:42px}.day-list article{grid-template-columns:85px 1fr;gap:12px}.rest h3{font-size:23px}.rest section{padding:55px 22px}.section-nav button{padding:12px 7px;font-size:10px}}
+.audio-pending{max-width:470px;margin:27px auto 0;padding:25px;text-align:center;border:1px solid #d8ddc9;background:#edf0e5}.audio-pending>span{font-size:30px;color:#879574}.audio-pending p{font:22px/1.2 WeddingSerif,Georgia,serif;margin:12px 0}.audio-pending small{font:12px/1.7 Arial,sans-serif;color:#6d785f}.wedding-footer{display:block!important}
+/* A fixed opening avoids iframe viewport-height feedback stretching the scene. */
+.opening{height:740px;min-height:0;max-height:none}.wording{padding-top:90px}h1{font-size:66px}.invitation-line{margin-bottom:18px}.location{margin-top:20px}.place{font-size:20px}.town{font-size:25px}.date-line{margin-top:16px}.hero-rsvp{margin:19px 0 0;border:1px solid #9ba686;border-radius:30px;padding:11px 20px;min-height:44px;background:#f9f7ed;color:#4d6249;font:11px Arial,sans-serif;letter-spacing:1px;opacity:1}.scene-reveal{animation:scene-in 2s ease-out both}.painted-scene{animation:landscape-breathe 14s ease-in-out infinite!important}.petals{font-size:50px;bottom:16%;height:30%;color:#fff4ba;text-shadow:0 0 12px #fff8d3}.petals span{animation:drift 6s ease-in-out infinite}.petals span:nth-child(2){animation-delay:-2s}.petals span:nth-child(3){animation-delay:-4s}h1 .first{animation:names-in 1.1s ease-out both}h1 .second{animation:names-in 1.5s ease-out both}.rest section{animation:section-rise .8s ease-out both}.bottom{bottom:16px}.bottom .discover{max-width:55%;font-size:10px}.bottom button{font-size:10px}
+@keyframes landscape-breathe{0%,100%{transform:scale(1);filter:brightness(1)}50%{transform:scale(1.045);filter:brightness(1.035)}}
+@keyframes section-rise{from{opacity:.6;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes names-in{from{opacity:.2;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes drift{0%,100%{transform:translate(0,0);opacity:.35}50%{transform:translate(30px,-35px);opacity:.95}}
+@media(max-width:350px){.opening{height:700px;min-height:0}.wording{padding-top:90px}h1{font-size:60px}.location{margin-top:17px}.place{font-size:18px}.town{font-size:23px}.hero-rsvp{margin-top:16px}}
+@media(min-width:768px){.opening{height:730px;min-height:0}.wording{padding-top:105px;padding-left:70px}h1{font-size:83px}.location{margin-top:25px}.place{font-size:23px}.town{font-size:29px}.hero-rsvp{margin-top:22px}.painted-scene{object-position:center 70%}}
+@media(prefers-reduced-motion:reduce){.opening *,.rest section{animation:none!important;transition:none!important}.painted-scene{animation:none!important;transform:none!important;filter:none!important}}
+/* Confine moving light and fine ripples to the painted water. */
+.lake-motion{position:absolute;z-index:0;pointer-events:none;left:0;right:0;top:64%;height:33%;clip-path:polygon(47% 0,62% 0,73% 15%,94% 47%,100% 69%,72% 100%,21% 96%,15% 75%,30% 51%,40% 24%);overflow:hidden;opacity:.68;mix-blend-mode:soft-light}
+.lake-shimmer{position:absolute;inset:-20%;background:repeating-linear-gradient(0deg,transparent 0 9px,rgba(255,255,217,.65) 10px,transparent 12px 24px,rgba(255,255,241,.45) 25px,transparent 27px 38px);transform:skewY(-2deg);animation:water-flow 5s ease-in-out infinite alternate}
+.ripple{position:absolute;display:block;border:1px solid rgba(255,255,224,.9);border-radius:50%;width:140px;height:16px;left:39%;top:29%;animation:lake-ripple 4.5s ease-out infinite;box-shadow:0 2px 0 rgba(83,111,91,.2)}
+.ripple-two{left:48%;top:65%;width:190px;height:20px;animation-delay:-1.8s}.ripple-three{left:25%;top:46%;width:110px;height:12px;animation-delay:-3.2s}
+@keyframes water-flow{from{transform:translateX(-11px) translateY(-5px) skewY(-2deg);opacity:.45}to{transform:translateX(13px) translateY(6px) skewY(1deg);opacity:.95}}
+@keyframes lake-ripple{0%{transform:scale(.4);opacity:0}20%{opacity:.8}100%{transform:scale(1.9);opacity:0}}
+.rest section{animation:none}.rest .scroll-reveal{opacity:.25;transform:translateY(24px);transition:opacity 1s ease-out,transform 1s ease-out}.rest .scroll-reveal.is-visible{opacity:1;transform:none}.little-rule{animation:rule-grow 3s ease-in-out infinite alternate;transform-origin:top}.day-number{transition:color .3s,transform .3s}.day-list article:hover .day-number{color:#a49569;transform:translateY(-3px)}
+@keyframes rule-grow{from{transform:scaleY(.55)}to{transform:scaleY(1)}}
+@media(min-width:768px){.lake-motion{left:34%;top:56%;height:42%;clip-path:polygon(47% 0,62% 0,73% 15%,94% 47%,100% 69%,72% 100%,21% 96%,15% 75%,30% 51%,40% 24%)}}
+@media(prefers-reduced-motion:reduce){.lake-motion{display:none}.little-rule{animation:none!important}.rest .scroll-reveal{opacity:1;transform:none;transition:none}.day-number{transition:none}.day-list article:hover .day-number{transform:none}}
+.lake-motion{mix-blend-mode:normal;opacity:.52}.lake-shimmer{background:repeating-linear-gradient(0deg,transparent 0 12px,rgba(255,255,228,.7) 13px,transparent 15px 30px,rgba(232,243,226,.5) 31px,transparent 33px 49px);animation-duration:3.6s}.ripple{border-color:rgba(249,255,228,.95);border-width:1.5px;box-shadow:0 2px 1px rgba(56,88,70,.28);animation-duration:3.2s}.ripple-two{animation-delay:-1.1s}.ripple-three{animation-delay:-2.2s}.motion-toggle{position:absolute;right:22px;top:65px;z-index:5;text-align:right}.motion-toggle button{border:0;background:rgba(248,247,237,.88);border-radius:30px;padding:11px 13px;min-height:44px;font:10px Arial,sans-serif;color:#637052;cursor:pointer}.reduce-label{display:none;font:9px/1.5 Arial,sans-serif;color:#647250}.motion-paused *{animation-play-state:paused!important}.motion-toggle button:hover{text-decoration:underline}@media(min-width:768px){.motion-toggle{right:36px;top:70px}}@media(prefers-reduced-motion:reduce){.motion-toggle button{display:none}.reduce-label{display:block}.rest .scroll-reveal{opacity:1!important;transform:none!important}}
+.motion-toggle{top:auto;bottom:72px}@media(min-width:768px){.motion-toggle{top:auto;bottom:76px}}
+/* Small continuing accents beyond the opening, without shifting the copy. */
+.palette>span{animation:palette-bob 5s ease-in-out infinite}.palette>span:nth-child(2){animation-delay:-1s}.palette>span:nth-child(3){animation-delay:-2s}.palette>span:nth-child(4){animation-delay:-3s}.rsvp-pending{animation:reply-glow 4s ease-in-out infinite}
+@keyframes palette-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}@keyframes reply-glow{0%,100%{border-color:#c0c7ac}50%{border-color:#82946c}}
+@media(prefers-reduced-motion:reduce){.palette>span,.rsvp-pending{animation:none!important}}
+/* Copy always stays fully readable in the auto-sized hosted preview. */
+.rest .scroll-reveal{opacity:1;transform:none}.water-texture{position:absolute;inset:0;z-index:-1;pointer-events:none;clip-path:polygon(47% 65%,60% 65%,68% 69%,87% 80%,81% 90%,36% 96%,27% 86%,37% 73%);opacity:.85}.water-texture img{width:100%;height:100%;object-fit:cover;object-position:center bottom;animation:water-sway 3s ease-in-out infinite alternate}
+@keyframes water-sway{from{transform:translate(-3px,-1px) scaleX(1.025)}to{transform:translate(3px,1px) scaleX(.995)}}
+@media(min-width:768px){.water-texture{clip-path:polygon(65% 57%,75% 57%,85% 70%,98% 87%,87% 99%,59% 92%,60% 75%)}.water-texture img{position:absolute;left:34%;width:66%;object-position:center 70%}}
+@media(prefers-reduced-motion:reduce){.water-texture{display:none}}
+.date-line{display:inline-block;padding:10px 17px;margin:17px auto 0;background:#f9f5e9;border:1px solid #c3c7af;border-radius:3px;color:#304737;font:600 12px/1.5 Arial,sans-serif;letter-spacing:2px;box-shadow:0 2px 10px #31452f12}.hero-rsvp{display:block;margin:15px auto 0}.music-wrap{right:22px;bottom:72px}.music{font-size:10px;padding:10px 13px}.rest h2{position:relative}.rest h2:after{content:'';display:block;width:65px;height:2px;background:#9b936b;margin:18px auto 0;transform-origin:left}.scroll-arrived h3{animation:card-copy-in .8s ease-out both}.day-list article.scroll-arrived .day-number{animation:date-arrive 1.1s cubic-bezier(.2,.7,.2,1) both}.rest h2.scroll-arrived:after{animation:line-draw 1.1s ease-out both}.travel-grid article.scroll-arrived{animation:travel-arrive .9s ease-out both}.palette.scroll-arrived>span{animation:colour-arrive .9s ease-out both}.palette.scroll-arrived>span:nth-child(2){animation-delay:.12s}.palette.scroll-arrived>span:nth-child(3){animation-delay:.24s}.palette.scroll-arrived>span:nth-child(4){animation-delay:.36s}.rsvp-pending.scroll-arrived{animation:reply-arrive 1s ease-out both}
+@keyframes date-arrive{from{transform:translateX(-28px) rotate(-6deg);color:#bda76c}to{transform:none;color:#7e8b69}}@keyframes card-copy-in{from{transform:translateX(20px)}to{transform:none}}@keyframes line-draw{from{transform:scaleX(.05)}to{transform:scaleX(1)}}@keyframes travel-arrive{from{transform:translateY(24px)}to{transform:none}}@keyframes colour-arrive{from{transform:translateY(26px) rotate(8deg)}to{transform:none}}@keyframes reply-arrive{from{transform:scale(.95);border-color:#8b976a}to{transform:scale(1);border-color:#c0c7ac}}
+@media(min-width:768px){.music-wrap{right:36px;bottom:76px}.attire-section h2:after{margin-left:0}}
+@media(prefers-reduced-motion:reduce){.rest *{animation:none!important;transition:none!important}}
+</style><title>Saumia &amp; Lakshay | 3-5 March 2027</title><meta content="Join Saumia and Lakshay in Bhimtal, 3-5 March 2027." name="description"/><meta content="Saumia &amp; Lakshay | 3-5 March 2027" property="og:title"/><meta content="Bhimtal · 3-5 March 2027" property="og:description"/><style>html{scroll-behavior:smooth;background:#f8f3e8}body{margin:0;background:#f8f3e8}.live-wedding{max-width:none!important;width:100%!important;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;box-shadow:none!important}.opening,.rest{margin:0!important}.opening{height:740px} .date-line{display:block;width:max-content;background:none;border:0;box-shadow:none;border-radius:0;padding:0;margin:32px auto 0;color:#304836;font:600 12px/1.5 Arial,sans-serif;letter-spacing:2.4px;text-shadow:0 1px 4px #fffdf0,0 0 12px #fffdf0,0 0 20px #fffdf0}.wording{position:relative}.date-line:before{content:'';position:absolute;left:17%;right:17%;height:50px;margin-top:-15px;background:radial-gradient(ellipse,rgba(249,246,234,.88),rgba(249,246,234,0) 72%);z-index:-1}#music-icon{position:fixed;top:18px;right:18px;z-index:100;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:1px solid #a0ac91;background:rgba(249,247,237,.94);color:#40583f;font:23px Georgia;box-shadow:0 3px 18px #243b2b18;cursor:pointer}#music-icon[data-playing=true]{color:#304a35}#music-icon[data-playing=false]:after{content:'';position:absolute;width:23px;height:1px;transform:rotate(-45deg);background:#6d7d61}.mast{right:80px}@media(min-width:768px){.opening{height:730px}.mast{right:95px}.date-line{margin-top:32px}.rest section{padding-left:max(65px,calc((100% - 1000px)/2));padding-right:max(65px,calc((100% - 1000px)/2))}.attire-section{padding-left:12%!important;padding-right:12%!important}.opening .wording{padding-left:70px}.travel-grid{max-width:800px}}@media(max-width:350px){.opening{height:700px}.mast{font-size:8px;right:77px}#music-icon{top:17px;right:15px}.date-line{font-size:11px;letter-spacing:2px}}</style></head><body><main class="file-card live-wedding" data-width="fluid"><div class="opening"><div class="scene-reveal"><img alt="Illustrated mountain lake with woodland and wildflowers" class="painted-scene" src="landscape.jpg"/></div><div aria-hidden="true" class="water-texture"><img alt="" src="landscape.jpg"/></div><div aria-hidden="true" class="lake-motion"><span class="lake-shimmer"></span><span class="ripple ripple-one"></span><span class="ripple ripple-two"></span><span class="ripple ripple-three"></span></div><div aria-hidden="true" class="grain"></div><header class="mast"><span>S / L</span><span>THE WEDDING · 2027</span></header><div class="wording"><p class="invitation-line">WE INVITE YOU TO CELEBRATE</p><h1><span class="first">Saumia</span><i>&amp;</i><span class="second">Lakshay</span></h1><div class="location"><span class="place">Country Inn Nature Resort</span><span class="town">Bhimtal</span></div><p class="date-line">3 - 5 MARCH 2027</p></div><div aria-hidden="true" class="petals"><span>·</span><span>·</span><span>·</span></div><div class="bottom"><button class="discover" data-go="welcome">Discover the celebration ↓</button></div></div><div class="rest"><nav aria-label="Wedding sections" class="section-nav"><button data-go="celebrations">Celebrations</button><button data-go="attire">Attire</button><button data-go="travel">Travel &amp; stay</button><button data-go="rsvp">RSVP</button></nav><section class="welcome-section" id="welcome"><p class="eyebrow">TOGETHER IN THE HILLS</p><h2>A few days.<br/><em>A lifetime of memories.</em></h2><p class="body-copy">With our favourite people gathered in Bhimtal, we cannot wait to celebrate the beginning of this next chapter.</p><p class="signature">With love, Saumia &amp; Lakshay</p><div class="little-rule"></div></section><section class="celebrations-section" id="celebrations"><p class="eyebrow">3 - 5 MARCH 2027</p><h2>The celebration</h2><p class="body-copy">Three days together, tucked away in the hills.</p><div class="day-list"><article><div class="day-number">03<span>MARCH · WEDNESDAY</span></div><div><h3>Arrive &amp; settle in</h3><p>Check-in and celebrations begin.</p></div></article><article><div class="day-number">04<span>MARCH · THURSDAY</span></div><div><h3>A day to celebrate</h3><p>The festivities continue.</p></div></article><article><div class="day-number">05<span>MARCH · FRIDAY</span></div><div><h3>Until we meet again</h3><p>Checkout and goodbyes.</p></div></article></div><details class="pending"><summary>Event timings to follow</summary><p>Mehendi, Sangeet, the Wedding and Reception are listed in the initial plan. Their dates, times and individual locations are still to be confirmed.</p></details></section><section class="attire-section" id="attire"><div><p class="eyebrow">WHAT TO WEAR</p><h2>Dress for<br/><em>the memories.</em></h2><p class="body-copy">Colours, dress codes and event-by-event outfit notes will be added here once confirmed.</p><span class="status-note">ATTIRE DETAILS TO FOLLOW</span></div><div aria-label="Decorative colours from the website artwork, not a dress code" class="palette"><span></span><span></span><span></span><span></span><p>Colours of our celebration<br/><small>Design palette only, not a dress code</small></p></div></section><section class="travel-section" id="travel"><p class="eyebrow">FIND YOUR WAY TO US</p><h2>Meet us in <em>Bhimtal.</em></h2><p class="venue-name">Country Inn Nature Resort</p><div class="travel-grid"><article><h3>Your stay</h3><p>Check-in: 3 March 2027<br/>Checkout: 5 March 2027</p><p class="quiet">Room arrangements and check-in/checkout times will be shared once confirmed.</p></article><article><h3>The journey</h3><p>Directions, arrival guidance and any transfer arrangements will be added here.</p><p class="quiet">Please wait for the confirmed travel details before making arrangements based on this preview.</p></article></div></section><section class="rsvp-section" id="rsvp"><p class="eyebrow">SAVE US A LITTLE REPLY</p><h2>Will you <em>join us?</em></h2><p class="body-copy">It would not be the same without you.</p><div class="rsvp-pending"><span>RSVP OPENS LATER</span><p>Once connected, this section will simply confirm who is coming.</p><small>No attendance responses are being collected in this preview.</small></div></section><div class="wedding-footer"><p>Saumia <i>&amp;</i> Lakshay</p><span>BHIMTAL · 3 - 5 MARCH 2027</span></div></div></main><audio id="wedding-music" loop="" preload="metadata" src="wedding-song.mp3"></audio><button aria-label="Play music" id="music-icon" title="Play music" type="button">♫</button><script>document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.go)?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})));const targets=document.querySelectorAll('.rest h2,.day-list article,.travel-grid article,.palette,.rsvp-pending');const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.remove('scroll-arrived');void e.target.offsetWidth;e.target.classList.add('scroll-arrived')}else e.target.classList.remove('scroll-arrived')}),{threshold:.15});targets.forEach(t=>observer.observe(t));const audio=document.querySelector('#wedding-music'),music=document.querySelector('#music-icon');audio.volume=.18;audio.playbackRate=1;const sync=()=>{music.dataset.playing=String(!audio.paused);music.setAttribute('aria-label',audio.paused?'Play music':'Pause music');music.title=audio.paused?'Play music':'Pause music';music.setAttribute('aria-pressed',String(!audio.paused))};audio.addEventListener('play',sync);audio.addEventListener('pause',sync);music.onclick=async()=>{if(audio.paused){try{await audio.play()}catch{sync()}}else audio.pause()};sync();audio.play().catch(sync);</script></body></html>
